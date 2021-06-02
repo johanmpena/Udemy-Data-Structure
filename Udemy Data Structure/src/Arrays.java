@@ -1,4 +1,16 @@
-// Video 13
+/* 
+ * Video 13 to 15.
+ * Operation and time complexity.
+ * ------------------------------
+ * Retrieve with index: O(1).
+ * Retrieve without index: O(n).
+ * Add an element to a full array: O(n).
+ * Add a element to the end of an array(has space): O(1).
+ * Insert or update an element at a specific index: O(1).
+ * Delete an element by setting to null(has index): O(1).
+ * Delete an element by setting to null(no index): O(n).
+ * Delete an element by shifting elements: O(n).
+ */
 
 public class Arrays {
 	
