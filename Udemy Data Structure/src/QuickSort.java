@@ -1,4 +1,13 @@
-
+/*
+ * Video 29 to 30.
+ * Time complexity.
+ * ------------------
+ * Best case: O(n*log(n)).
+ * Worst case: O(n^2).
+ * Advantages: it is O(n*log(n)) on most cases.
+ * Disadvantages: worst case is O(n^2).
+ * Unstable sort (Does not keep the order of duplicate items). 
+ */
 
 public class QuickSort {
 
@@ -36,18 +45,14 @@ public class QuickSort {
                 input[i] = input[j];
             }
 
-            // NOTE: empty loop body
+            // NOTE: empty loop bodySimone Biles’s
             while (i < j && input[++i] <= pivot);
             if (i < j) {
                 input[j] = input[i];
             }
 
         }
-        
-        for (int z = 0; z < input.length; z++) {
-            System.out.println(input[z]);
-        }
-        System.out.println("Pivot is: " + pivot);
+     
         input[j] = pivot;
         return j;
 

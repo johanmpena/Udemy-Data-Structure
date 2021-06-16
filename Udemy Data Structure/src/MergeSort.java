@@ -2,11 +2,11 @@
  * Video 27 to 28.
  * Time complexity.
  * ------------------
- * Best case: O(n log n).
+ * Best case: O(n*log(n)).
  * Worst case: O(n log n).
  * Advantages: it is quicker for larger list.
  * Disadvantages: slower for smaller tasks.
- * Stable sort(keeps the order of diplicate items).
+ * Stable sort(keeps the order of duplicate items).
  */
 public class MergeSort {
 
