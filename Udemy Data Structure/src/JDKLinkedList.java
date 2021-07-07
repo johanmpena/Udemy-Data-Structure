@@ -35,5 +35,7 @@ public class JDKLinkedList {
 			System.out.print("<=>");
 		}
 		System.out.println("null");
+		
+		
 	}
 }
