@@ -88,10 +88,60 @@ public class EmployeeDoublyLinkedList {
 		EmployeeNode current = head;
 		System.out.print("HEAD - > ");
 		while (current != null) {
-			System.out.print(current);
+			System.out.println(current);
 			System.out.print(" <=> ");
 			current = current.getNext();
 		}
 		System.out.println("null");
 	}
+	
+	 public boolean addBefore(Employee newEmployee, Employee existingEmployee) {
+
+	        /* return true if you were able to successfully add the employee
+	         * into the list before the existing employee. Return false
+	         * if the existing employee doesn't exist in the list
+			 * add your code here */
+		 	
+		 	if(head == null) {
+		 		return false;
+		 	}
+		 	
+		    EmployeeNode current = head;
+		 	
+		 	// First check to see if employee is in list.
+		    boolean found = false;
+		 	while (current != null && found == false) {
+		 		if(current.getEmployee().equals(existingEmployee)) {
+		 			found = true; 
+		 			break;
+				}
+		 			
+		 		current = current.getNext();
+		 	}
+
+		 	if(found == false) {
+		 		System.out.println("No employee by that name exist.");
+		 		return false;
+		 	}
+		 	else {
+		 	    EmployeeNode node = new EmployeeNode(newEmployee); 
+		 	
+		 	    node.setNext(current);
+		 	   
+		 	    if(current.getPrevious() == null) {
+		 	    	head = node;
+		 	    }
+		 	    else {
+		 	    	node.setPrevious(current.getPrevious());
+		 	    	node.getPrevious().setNext(node);
+		 	    }
+		 	    
+		 	    current.setPrevious(node);
+		 	    
+		 		size++;
+		 		
+		 		return found;
+		 	}
+	}
+	 
 }
