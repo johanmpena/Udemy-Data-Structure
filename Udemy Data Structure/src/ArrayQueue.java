@@ -28,7 +28,12 @@ public class ArrayQueue {
 			Employee[] newArray = new Employee[2 * queue.length];
 			
 			System.arraycopy(queue, front, newArray, 0, queue.length - front);
+			System.arraycopy(queue, 0, newArray, queue.length - front, back);
+			
 			queue = newArray;
+			
+			front = 0;
+			back = numItems;	
 		}
 		
 		queue[back] = employee;
