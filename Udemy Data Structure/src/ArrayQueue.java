@@ -37,12 +37,12 @@ public class ArrayQueue {
 		}
 		
 		queue[back] = employee;
-		if (back < queue.length - 1) {
+		if(back < queue.length - 1) {
 			back++;
 		}
 		else {
 			back = 0;
-		} 
+		}
 	}
 	
 	public Employee remove() {
@@ -57,7 +57,9 @@ public class ArrayQueue {
 			front = 0;
 			back = 0;
 		}
-		
+		else if (front == queue.length) {
+			front = 0;
+		}
 		return employee;
 	}
 	
@@ -70,12 +72,27 @@ public class ArrayQueue {
 	}
 	
 	public int size() {
-		return back - front;
+		if (front <= back) {
+			return back - front;
+		}
+		else {
+			return back - front + queue.length;
+		}
 	}
 	
 	public void printQueue() {
-		for (int i = front; i < back; i++) {
-			System.out.println(queue[i]);
+		if (front <= back) {
+			for (int i = front; i < back; i++) {
+				System.out.println(queue[i]);
+			}
+		}
+		else {
+			for (int i = front; i < queue.length; i++) {
+				System.out.println(queue[i]);
+			}
+			for (int i = 0; i < back; i++) {
+				System.out.println(queue[i]);
+			}
 		}
 	}
 }
