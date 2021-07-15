@@ -23,7 +23,7 @@ public class ArrayQueue {
 	
 	// Circular Implementation.
 	public void add(Employee employee) {
-		if(back == queue.length) {
+		if(size() == queue.length - 1) {
 			int numItems = size();
 			Employee[] newArray = new Employee[2 * queue.length];
 			
