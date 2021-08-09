@@ -52,5 +52,11 @@ public class Employee {
 		return "Employee [firstName='" + firstName + "', lastName='" + lastName + "', id=" + id + "]";
 	}
 	
-	
+	@Override
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + id;
+        return result;
+    }
 }
