@@ -13,12 +13,20 @@ public class Heap {
 			throw new IndexOutOfBoundsException("Heap is full");
 		}
 		
-		heap[size++] = value;
+		heap[size] = value;
 		
 		fixHeapAbove(size);
 		size++;
 	}
-	
+
+public int peek() {
+	if (isEmpty()) {
+		throw new IndexOutOfBoundsException("Heap is empty");
+	}
+
+	return heap[0];
+}
+
 	public int delete(int index) {
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException("Heap is empty");
@@ -41,6 +49,17 @@ public class Heap {
 		return deletedValue;
 	}
 	
+	public void sort() {
+		int lastHeapIndex = size - 1;
+		for (int i = 0; i < lastHeapIndex; i++){
+				int tmp = heap[0];
+				heap[0] = heap[lastHeapIndex - i];
+				heap[lastHeapIndex - i] = tmp;
+
+				fixHeapBelow(0, lastHeapIndex - i - 1);
+		}
+	}
+
 	private void fixHeapBelow(int index, int lastHeapIndex) {
 		int childToSwap;
 		

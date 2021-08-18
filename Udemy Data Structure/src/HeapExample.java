@@ -14,5 +14,13 @@ public class HeapExample {
 		heap.insert(67);
 		
 		heap.printHeap();
+
+		// heap.delete(0);
+		// heap.printHeap();
+
+		// System.out.println(heap.peek());
+
+		heap.sort();
+		heap.printHeap();
 	}
 }
