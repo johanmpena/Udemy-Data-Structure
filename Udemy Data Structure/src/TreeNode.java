@@ -79,6 +79,16 @@ public class TreeNode {
 		}
 	}
 	
+	public void traversePreOrder() {
+		System.out.print("Data = " + data + ", ");
+		if (leftChild != null) {
+			leftChild.traversePreOrder();
+		}
+		if (rightChild != null) {
+			rightChild.traversePreOrder();
+		}
+	}
+	
 	public int getData() {
 		return data;
 	}
@@ -103,5 +113,7 @@ public class TreeNode {
 		this.rightChild = rightChild;
 	}
 	
-	
+	public String toString() {
+		return "Data = " + data; 
+	}
 }
